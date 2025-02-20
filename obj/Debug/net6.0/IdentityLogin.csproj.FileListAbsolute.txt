@@ -283,4 +283,10 @@
 /home/hovu/Project/Back-End/Project-xuanthulab/IdentityLogin/obj/Debug/net6.0/IdentityLogin.pdb
 /home/hovu/Project/Back-End/Project-xuanthulab/IdentityLogin/obj/Debug/net6.0/IdentityLogin.genruntimeconfig.cache
 /home/hovu/Project/Back-End/Project-xuanthulab/IdentityLogin/obj/Debug/net6.0/ref/IdentityLogin.dll
-/home/hovu/Project/Back-End/Project-xuanthulab/IdentityLogin/obj/Debug/net6.0/IdentityLogin.csproj.CopyComplete
+/home/hovu/Project/Back-End/Project-xuanthulab/IdentityLogin/obj/Debug/net6.0/IdentityLogin.sourcelink.json
+/home/hovu/Project/Back-End/Project-xuanthulab/IdentityLogin/obj/Debug/net6.0/staticwebassets/msbuild.IdentityLogin.Microsoft.AspNetCore.StaticWebAssets.props
+/home/hovu/Project/Back-End/Project-xuanthulab/IdentityLogin/obj/Debug/net6.0/staticwebassets/msbuild.build.IdentityLogin.props
+/home/hovu/Project/Back-End/Project-xuanthulab/IdentityLogin/obj/Debug/net6.0/staticwebassets/msbuild.buildMultiTargeting.IdentityLogin.props
+/home/hovu/Project/Back-End/Project-xuanthulab/IdentityLogin/obj/Debug/net6.0/staticwebassets/msbuild.buildTransitive.IdentityLogin.props
+/home/hovu/Project/Back-End/Project-xuanthulab/IdentityLogin/obj/Debug/net6.0/staticwebassets.pack.json
+/home/hovu/Project/Back-End/Project-xuanthulab/IdentityLogin/obj/Debug/net6.0/Identity.A1C934C5.Up2Date

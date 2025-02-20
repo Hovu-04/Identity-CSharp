@@ -23,7 +23,7 @@ namespace IdentityLogin.Areas.Identity.Pages.Account
             _signInManager = signInManager;
             _logger = logger;
         }
-
+        
         public async Task<IActionResult> OnPost(string returnUrl = null)
         {
             await _signInManager.SignOutAsync();
@@ -34,9 +34,9 @@ namespace IdentityLogin.Areas.Identity.Pages.Account
             }
             else
             {
-                // This needs to be a redirect so that the browser performs a new
-                // request and the identity for the user gets updated.
-                return RedirectToPage();
+                returnUrl = Url.Content("~/");
+                return LocalRedirect(returnUrl);
+                // return RedirectToPage();
             }
         }
     }

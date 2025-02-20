@@ -56,7 +56,7 @@ builder.Services.Configure<IdentityOptions>(options =>
 
     // Cấu hình Lockout - khóa user sau nhiều lần đăng nhập sai
     options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5); // Khóa 5 phút
-    options.Lockout.MaxFailedAccessAttempts = 5; // Sau 5 lần thất bại sẽ bị khóa
+    options.Lockout.MaxFailedAccessAttempts = 3; // Sau 3 lần thất bại sẽ bị khóa
     options.Lockout.AllowedForNewUsers = true; // Áp dụng cho user mới
 
     // Cấu hình User
