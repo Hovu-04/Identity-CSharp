@@ -862,3 +862,4 @@
 /home/hovu/Project-Programing/Back-End/Project-xuanthulab/Identity-CSharp/obj/Debug/net6.0/IdentityLogin.pdb
 /home/hovu/Project-Programing/Back-End/Project-xuanthulab/Identity-CSharp/obj/Debug/net6.0/IdentityLogin.genruntimeconfig.cache
 /home/hovu/Project-Programing/Back-End/Project-xuanthulab/Identity-CSharp/obj/Debug/net6.0/ref/IdentityLogin.dll
+/home/hovu/Project-Programing/Back-End/Project-xuanthulab/Identity-CSharp/bin/Debug/net6.0/libman.json

@@ -19,73 +19,45 @@ using Microsoft.Extensions.Logging;
 
 namespace IdentityLogin.Areas.Identity.Pages.Account
 {
+    [AllowAnonymous]
     public class LoginModel : PageModel
     {
+        private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
         private readonly ILogger<LoginModel> _logger;
-        private readonly UserManager<AppUser> _userManager;
 
-        public LoginModel(SignInManager<AppUser> signInManager, ILogger<LoginModel> logger,
+        public LoginModel(SignInManager<AppUser> signInManager, 
+            ILogger<LoginModel> logger,
             UserManager<AppUser> userManager)
         {
+            _userManager = userManager;
             _signInManager = signInManager;
             _logger = logger;
-            _userManager = userManager;
         }
 
-        /// <summary>
-        ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
-        ///     directly from your code. This API may change or be removed in future releases.
-        /// </summary>
         [BindProperty]
         public InputModel Input { get; set; }
 
-        /// <summary>
-        ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
-        ///     directly from your code. This API may change or be removed in future releases.
-        /// </summary>
         public IList<AuthenticationScheme> ExternalLogins { get; set; }
 
-        /// <summary>
-        ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
-        ///     directly from your code. This API may change or be removed in future releases.
-        /// </summary>
         public string ReturnUrl { get; set; }
 
-        /// <summary>
-        ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
-        ///     directly from your code. This API may change or be removed in future releases.
-        /// </summary>
         [TempData]
         public string ErrorMessage { get; set; }
 
-        /// <summary>
-        ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
-        ///     directly from your code. This API may change or be removed in future releases.
-        /// </summary>
         public class InputModel
         {
-            /// <summary>
-            ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
-            ///     directly from your code. This API may change or be removed in future releases.
-            /// </summary>
             [Required(ErrorMessage = "Phải nhập {0}")]
+            // [EmailAddress]
             [Display(Name = "Địa chỉ email hoặc tên tài khoản")]
-            public string UsernameOrEmail { get; set; }
+            public string UserNameOrEmail { get; set; }
 
-            /// <summary>
-            ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
-            ///     directly from your code. This API may change or be removed in future releases.
-            /// </summary>
             [Required]
             [DataType(DataType.Password)]
-            [Display(Name = "Phải nhập mật khẩu")]
+            [Display(Name = "Mật khẩu")]
             public string Password { get; set; }
 
-            /// <summary>
-            ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
-            ///     directly from your code. This API may change or be removed in future releases.
-            /// </summary>
+            [Display(Name = "Nhớ thông tin đăng nhập?")]
             public bool RememberMe { get; set; }
         }
 
@@ -111,22 +83,26 @@ namespace IdentityLogin.Areas.Identity.Pages.Account
             returnUrl ??= Url.Content("~/");
 
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
-
+        
             if (ModelState.IsValid)
             {
                 // This doesn't count login failures towards account lockout
                 // To enable password failures to trigger account lockout, set lockoutOnFailure: true
-                var result = await _signInManager.PasswordSignInAsync(Input.UsernameOrEmail, Input.Password,
-                    Input.RememberMe, lockoutOnFailure: true);
+
+                // _signInManager.SignInAsync()
+ 
+                var result = await _signInManager.PasswordSignInAsync(Input.UserNameOrEmail, Input.Password, Input.RememberMe, lockoutOnFailure: true);
+                
+                // Tìm UserName theo Email, đăng nhập lại
                 if (!result.Succeeded)
                 {
-                    var user = await _userManager.FindByEmailAsync(Input.UsernameOrEmail);
+                    var user = await _userManager.FindByEmailAsync(Input.UserNameOrEmail);
                     if (user != null)
                     {
-                        result = await _signInManager.PasswordSignInAsync(user.UserName, Input.Password,
-                            Input.RememberMe, lockoutOnFailure: true);
+                        result = await _signInManager.PasswordSignInAsync(user.UserName, Input.Password, Input.RememberMe, lockoutOnFailure: true);
                     }
-                }
+                } 
+
 
                 if (result.Succeeded)
                 {
@@ -136,8 +112,7 @@ namespace IdentityLogin.Areas.Identity.Pages.Account
 
                 if (result.RequiresTwoFactor)
                 {
-                    return RedirectToPage("./LoginWith2fa",
-                        new { ReturnUrl = returnUrl, RememberMe = Input.RememberMe });
+                    return RedirectToPage("./LoginWith2fa", new { ReturnUrl = returnUrl, RememberMe = Input.RememberMe });
                 }
 
                 if (result.IsLockedOut)
@@ -147,7 +122,7 @@ namespace IdentityLogin.Areas.Identity.Pages.Account
                 }
                 else
                 {
-                    ModelState.AddModelError(string.Empty, "Cố gắng đăng nhập không hợp lệ.");
+                    ModelState.AddModelError(string.Empty, "Thất bại, tài khoản không tồn tại hoặc sai username, password");
                     return Page();
                 }
             }

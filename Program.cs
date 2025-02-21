@@ -70,11 +70,20 @@ builder.Services.Configure<IdentityOptions>(options =>
     options.SignIn.RequireConfirmedPhoneNumber = false; // Không bắt buộc xác thực số điện thoại
 });
 
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.LoginPath = "login";
+    options.LogoutPath = "logout";
+    options.AccessDeniedPath = "/khongduoctruycap.html";
+});
+
 // Register email
 builder.Services.AddOptions();
 var mailSetting = builder.Configuration.GetSection("MailSettings");
 builder.Services.Configure<MailSettings>(mailSetting);
 builder.Services.AddSingleton<IEmailSender,SendMailService>();
+
+builder.Services.AddSingleton<IdentityErrorDescriber, AppIdentityErrorDescriber>();
 
 var app = builder.Build();
 
