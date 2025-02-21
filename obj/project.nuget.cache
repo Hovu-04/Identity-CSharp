@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "C3Mwi6W/Crw=",
+  "dgSpecHash": "WAp/JGWWYmo=",
   "success": true,
-  "projectFilePath": "/home/hovu/Project-Programing/Back-End/Project-xuanthulab/IdentityLogin/IdentityLogin.csproj",
+  "projectFilePath": "/home/hovu/Project-Programing/Back-End/Project-xuanthulab/Identity-CSharp/IdentityLogin.csproj",
   "expectedPackageFiles": [
     "/home/hovu/.nuget/packages/automapper/12.0.1/automapper.12.0.1.nupkg.sha512",
     "/home/hovu/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/12.0.1/automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

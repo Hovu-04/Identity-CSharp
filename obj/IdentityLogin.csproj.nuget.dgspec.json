@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/hovu/Project-Programing/Back-End/Project-xuanthulab/IdentityLogin/IdentityLogin.csproj": {}
+    "/home/hovu/Project-Programing/Back-End/Project-xuanthulab/Identity-CSharp/IdentityLogin.csproj": {}
   },
   "projects": {
-    "/home/hovu/Project-Programing/Back-End/Project-xuanthulab/IdentityLogin/IdentityLogin.csproj": {
+    "/home/hovu/Project-Programing/Back-End/Project-xuanthulab/Identity-CSharp/IdentityLogin.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/hovu/Project-Programing/Back-End/Project-xuanthulab/IdentityLogin/IdentityLogin.csproj",
+        "projectUniqueName": "/home/hovu/Project-Programing/Back-End/Project-xuanthulab/Identity-CSharp/IdentityLogin.csproj",
         "projectName": "IdentityLogin",
-        "projectPath": "/home/hovu/Project-Programing/Back-End/Project-xuanthulab/IdentityLogin/IdentityLogin.csproj",
+        "projectPath": "/home/hovu/Project-Programing/Back-End/Project-xuanthulab/Identity-CSharp/IdentityLogin.csproj",
         "packagesPath": "/home/hovu/.nuget/packages/",
-        "outputPath": "/home/hovu/Project-Programing/Back-End/Project-xuanthulab/IdentityLogin/obj/",
+        "outputPath": "/home/hovu/Project-Programing/Back-End/Project-xuanthulab/Identity-CSharp/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/hovu/.nuget/NuGet/NuGet.Config"
