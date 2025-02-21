@@ -1,0 +1,38 @@
+﻿@{
+    if (ViewData.TryGetValue("ParentLayout", out var parentLayout))
+    {
+        Layout = (string)parentLayout;
+    }
+    else
+    {
+        Layout = "~/Pages/Shared/_Layout.cshtml";
+    }
+}
+
+<!-- Thêm .container của Bootstrap -->
+<div class="container">
+
+    <!-- Viết hoa tiêu đề, sử dụng .text-uppercase -->
+    <h1 class="text-uppercase">MANAGE YOUR ACCOUNT</h1>
+
+    <div>
+        <h2 class="text-uppercase">CHANGE YOUR ACCOUNT SETTINGS</h2>
+        <hr />
+
+        <div class="row">
+            <div class="col-md-3">
+                <partial name="_ManageNav" />
+            </div>
+
+            <!-- Nếu muốn toàn bộ nội dung trong cột này viết hoa -->
+            <div class="col-md-9 text-uppercase">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@section Scripts {
+    @RenderSection("Scripts", required: false)
+}
