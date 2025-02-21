@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/hovu/Project/Back-End/Project-xuanthulab/IdentityLogin/IdentityLogin.csproj": {}
+    "/home/hovu/Project-Programing/Back-End/Project-xuanthulab/IdentityLogin/IdentityLogin.csproj": {}
   },
   "projects": {
-    "/home/hovu/Project/Back-End/Project-xuanthulab/IdentityLogin/IdentityLogin.csproj": {
+    "/home/hovu/Project-Programing/Back-End/Project-xuanthulab/IdentityLogin/IdentityLogin.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/hovu/Project/Back-End/Project-xuanthulab/IdentityLogin/IdentityLogin.csproj",
+        "projectUniqueName": "/home/hovu/Project-Programing/Back-End/Project-xuanthulab/IdentityLogin/IdentityLogin.csproj",
         "projectName": "IdentityLogin",
-        "projectPath": "/home/hovu/Project/Back-End/Project-xuanthulab/IdentityLogin/IdentityLogin.csproj",
+        "projectPath": "/home/hovu/Project-Programing/Back-End/Project-xuanthulab/IdentityLogin/IdentityLogin.csproj",
         "packagesPath": "/home/hovu/.nuget/packages/",
-        "outputPath": "/home/hovu/Project/Back-End/Project-xuanthulab/IdentityLogin/obj/",
+        "outputPath": "/home/hovu/Project-Programing/Back-End/Project-xuanthulab/IdentityLogin/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/hovu/.nuget/NuGet/NuGet.Config"
@@ -32,11 +32,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -113,7 +108,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/home/hovu/.dotnet/sdk/8.0.404/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.428/RuntimeIdentifierGraph.json"
         }
       }
     }
